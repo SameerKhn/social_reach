@@ -20,3 +20,13 @@ def get_twitter_client():
     auth=get_twitter_auth()
     client= API(auth)
     return client
+
+def get_hashtags(tweet):
+    entities = tweet.get('entities', {})
+    hashtags = entities.get('hashtags', [])
+    return [tag['text'].lower() for tag in hashtags]
+
+
+
+
+
