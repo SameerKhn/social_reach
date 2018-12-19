@@ -5,3 +5,17 @@
 <p> {{item}}</p>
 {% endfor %}
 
+<!--{%for key,value in Dict.items %}-->
+<!--<div> <p> {{key}} : {{value}}</p></div>-->
+<!--{% endfor %}-->
+<div><p> {{tweetsNoOfHashtags}} tweets without hashtags {{tweetsNo_Of_Hashtags_with_percent}}% </p></div>
+<div><p> {{tweetsWithHashtags}} tweets with atleast one hashtag {{ tweets_with_hashtags_percent}}% </p></div>
+
+{% for object in percentEliteList %}
+
+<div><p> {{object.0}} tweets with {{object.1}} hashtags {{object.2}}% total,
+    {{object.3}}% elite</p></div>
+
+{% endfor %}
+
+
