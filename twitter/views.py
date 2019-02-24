@@ -1,42 +1,61 @@
+import base64
+
 from django.shortcuts import render
-from tweepy import Cursor
+from . import forms
 from . import authentication
+from . import methods
 import json
-from collections import Counter
+
 from collections import defaultdict
 
+
+import nltk
+from nltk.tokenize import TweetTokenizer
+from nltk.corpus import stopwords
+import string
+from datetime import datetime
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import pandas as pd
+import numpy as np
+import pickle
+import io
+from django.http import HttpResponse
+from matplotlib import pylab
 # Create your views here.
 
 
 
 def index(request):
-    client = authentication.get_twitter_client()
-    list=[]
+
     hashtagList=[]
-    hashtags = Counter()
-    #Dictionary={}
+    #hashtags = Counter()
+    FriendList=[]
+    FollowerList=[]
     percentEliteList=[]
-    user ='PacktPub'
+    reach1 = []
+
+    favorite_count1, retweet_count1 = [], []
     hashtag_count = defaultdict(int)
 
-    for page in Cursor(client.user_timeline, screen_name=user, count=200).pages(3):
-       for status in page:
-         list.append(json.dumps(status._json)+"\n")
 
-    for line in list:
-        tweet = json.loads(line)
-        hashtagsInTweet = authentication.get_hashtags(tweet)
-        hashtags.update(hashtagsInTweet)
-        n_of_hashtags = len(hashtagsInTweet)
-        hashtag_count[n_of_hashtags] += 1
+    screen_name ='PacktPub'
+    context = {}
 
-    for tag in hashtags.most_common(20):
-        hashtagList.append(tag)
 
-    # Dictionary = authentication.NoOfHashtags(list,hashtagsInTweet)
-    #hashtagPercentListElite = authentication.HashtagsWithPercentElite()
-    tweetsNoOfHashtags, tweetsNo_Of_Hashtags_with_percent, tweetsWithHashtags,tweets_with_hashtags_percent,percentEliteList=authentication.NoOfHashtags(n_of_hashtags,hashtag_count)
 
-    context = {'status': hashtagList, 'tweetsNoOfHashtags':tweetsNoOfHashtags,'tweetsNo_Of_Hashtags_with_percent':tweetsNo_Of_Hashtags_with_percent,
-               'tweetsWithHashtags':tweetsWithHashtags, 'tweets_with_hashtags_percent':tweets_with_hashtags_percent,'percentEliteList':percentEliteList}
+    # context={'mutual_friends':len(mutual_friends), 'followers_not_following':len(followers_not_following),'friends_not_following':len(friends_not_following),
+    #           'LengthOfFreinds':len(FreindNames),'LengthOfFollowers' : len(FollowerNames) , 'screen_name': screen_name }
     return render(request, 'twitter/index.html', context)
+
+
+def PostIndex(request):
+
+    if (request.POST):
+        Sname = request.POST['screenName']
+
+            
+
+
+    context={'Sname':Sname}
+    return render(request, 'twitter/New.html', context)
