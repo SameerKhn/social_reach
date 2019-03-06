@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>{{Sname}}  Social Reach - Dashboard</title>
+  <title>SocialReach-Analysis</title>
 
   <!-- Custom fonts for this template-->
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
@@ -29,107 +30,14 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3" style="font-family: cursive">Social Reach</div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      <div>   <!--class="img-fluid px-3 px-sm-4 mt-3 mb-4"-->
+                  <img  class="img-fluid px-1"  style=" height:500px; width:200px" src="{% static 'img/sidetree.jpg' %}" alt="Not Showed">
       </div>
 
     </ul>
@@ -164,7 +72,6 @@
             </div>
           </form>
 
-          <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -187,140 +94,6 @@
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
 
           </ul>
 
@@ -332,8 +105,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <h1 class="h3 mb-0 text-gray-800">{{UserName}}</h1>
+            <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
           </div>
 
           <!-- Content Row -->
@@ -345,11 +118,14 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Number Of Tweets By {{UserName}}</div>
+                      <!--<div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>-->
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                              {{UserNoOfTweets}}
+                        </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <!--<i class="fas fa-calendar fa-2x text-gray-300"></i>-->
                     </div>
                   </div>
                 </div>
@@ -362,11 +138,12 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{{UserName}}'s Location</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{UserLocation}} </div>
+
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      <!--<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>-->
                     </div>
                   </div>
                 </div>
@@ -379,20 +156,17 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">{{UserName}}'s Account Creation Date</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> {{UserCreatedAt}} </div>
+
                         </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                      <!--<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>-->
                     </div>
                   </div>
                 </div>
@@ -405,12 +179,10 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{{UserName}}'s Description </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{UserDescription}} </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -421,74 +193,49 @@
 
           <div class="row">
 
-            <!-- Area Chart -->
+            <!-- Time Series Card -->
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Time Series Overview</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
+
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
+                    <img src="timeseries/?userName={{Sname}}"   style="display:block; height:300px; width:380px"  alt="Pic Not Showed" />
+                  </div>  <!--{% url 'TimeSeries' %}-->
                 </div>
               </div>
+
+
+
             </div>
 
-            <!-- Pie Chart -->
+            <!-- Top 10 Mentioned Users -->
             <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4">
+            <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Sentiment Analysis</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
+                  <h6 class="m-0 font-weight-bold text-primary">Top 10 Most Mentioned Users</h6>
+
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                      <!--<div id="pie"></div>-->
+                  <div class="text-center">
+                  {% for item in UserMentionList %}
+                  <div class="h6 mb-0 font-weight-bold text-gray-800"><p> @{{item.tag}} : {{item.count}}</p></div>
+                  {%endfor%}
+                  </div>
 
-                  </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Positive
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Negative
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Neutral
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
+
+              </div>
+
+
           </div>
 
           <!-- Content Row -->
@@ -497,131 +244,159 @@
             <!-- Content Column -->
             <div class="col-lg-6 mb-4">
 
-              <!-- Project Card Example -->
+              <!-- Hashtag Analysis Card -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">{{UserName}}'s Hashtags Usage Analysis</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
+                  <h4 class="small font-weight-bold">{{tweetsNoOfHashtags}} Tweets Without Hashtags  <span class="float-right">{{tweetsNo_Of_Hashtags_with_percent}}%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{tweetsNo_Of_Hashtags_with_percent}}%" aria-valuenow="{{tweetsNo_Of_Hashtags_with_percent}}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
+                  <h4 class="small font-weight-bold">{{tweetsWithHashtags}} Tweets With At Least One Hashtag <span class="float-right">{{tweets_with_hashtags_percent}}%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: {{tweets_with_hashtags_percent}}%" aria-valuenow="{{tweets_with_hashtags_percent}}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
+                  <h4 class="small font-weight-bold">{{percentEliteList.0.0}} Tweets With One Hashtag <span class="float-right">{{percentEliteList.0.2}}%</span></h4>
+
                   <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: {{percentEliteList.0.2}}%" aria-valuenow="{{percentEliteList.0.2}}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
+                  <h4 class="small font-weight-bold">{{percentEliteList.1.0}} Tweets With Two Hashtags  <span class="float-right">{{percentEliteList.1.2}}%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width: {{percentEliteList.1.2}}%" aria-valuenow="{{percentEliteList.1.2}}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
+                  <h4 class="small font-weight-bold">{{percentEliteList.2.0}} Tweets With Three Hashtags  <span class="float-right">{{percentEliteList.2.2}}%</span></h4>
                   <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{percentEliteList.2.2}}%" aria-valuenow="{{percentEliteList.2.2}}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
 
-              <!-- Color System -->
-              <div class="row">
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-primary text-white shadow">
-                    <div class="card-body">
-                      Primary
-                      <div class="text-white-50 small">#4e73df</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-success text-white shadow">
-                    <div class="card-body">
-                      Success
-                      <div class="text-white-50 small">#1cc88a</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-info text-white shadow">
-                    <div class="card-body">
-                      Info
-                      <div class="text-white-50 small">#36b9cc</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-warning text-white shadow">
-                    <div class="card-body">
-                      Warning
-                      <div class="text-white-50 small">#f6c23e</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-danger text-white shadow">
-                    <div class="card-body">
-                      Danger
-                      <div class="text-white-50 small">#e74a3b</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-secondary text-white shadow">
-                    <div class="card-body">
-                      Secondary
-                      <div class="text-white-50 small">#858796</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-lg-6 mb-4">
-
-              <!-- Illustrations -->
+              <!-- Influence and engagement -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Measuring Influence And Engagement</h6>
+                </div>
+                <div class="card-body">
+                  <div class="h6 mb-0 font-weight-bold text-gray-800">
+                    <!--<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{% static 'img/undraw_posting_photo.svg' %}" alt="">-->
+                    <!--<div>{{followersCount}} Followers   </div>-->
+                    <!--<br>-->
+                    <div><span style="color:blue">{{sum_reach}} </span>Users Reached By 1-Degree Connection   </div>
+                    <br>
+                    <div>Average Number Of Followers For {{UserName}}'s Followers: <span style="color:blue">{{avg_followers}}</span>    </div>
+                    <br>
+                    <div>Favourited <span style="color:blue">{{favorite_count}}</span> Times (<span style="color:blue">{{avg_favorite}}</span> Per Tweet, <span style="color:blue">{{favorite_per_user}}</span> Per User)   </div>
+                    <br>
+                    <div>Retweeted <span style="color:blue">{{retweet_count}}</span> Times (<span style="color:blue">{{avg_retweet}}</span> Per Tweet, <span style="color:blue">{{retweet_per_user}}</span> Per User) </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Top Tweets Displayed -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Recent Tweets By {{UserName}}</h6>
                 </div>
                 <div class="card-body">
                   <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{% static 'img/undraw_posting_photo.svg' %}" alt="">
-                  </div>
-                  <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
-                  <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
+                      {% for item in TweetList %}
+                  <div class="h6 mb-0 font-weight-bold text-gray-800"><p> {{item.tag}} : {{item.count}}</p></div>
+                  {%endfor%}
                 </div>
               </div>
+              </div>
 
-              <!-- Approach -->
+              <!-- Top 10 Terms -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Top 10 Most Used Terms(Words)</h6>
                 </div>
                 <div class="card-body">
-                  <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
-                  <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
+                  <div class="text-center">
+                  {% for item in TermFrequencyList %}
+                  <div class="h6 mb-0 font-weight-bold text-gray-800"><p> {{item.tag}} : {{item.count}}</p></div>
+                  {%endfor%}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4"> <!--2nd row column 2 -->
+
+
+                <!-- Top 10 Hashtags -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Top 10 Most Used Hashtags</h6>
+                </div>
+                <div class="card-body">
+                  <div class="text-center">
+                   {% for item in HashtagList %}
+                  <div class="h6 mb-0 font-weight-bold text-gray-800"><p> #{{item.tag}} : {{item.count}}</p></div>
+                  {%endfor%}
+
+                </div>
+              </div>
+              </div>
+
+                      <!-- Freinds And Followers Card -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Followers And Freinds Analysis</h6>
+                </div>
+                <div class="card-body">
+
+                    <div class="h6 mb-0 font-weight-bold text-gray-800" >
+                        <div> {{UserName}} Has <span style="color:blue">{{FollowerNames}}</span> Followers</div><br>
+                        <div> {{UserName}} Has Has <span style="color:blue">{{FreindNames}}</span> Friends</div><br>
+                        <div> {{UserName}} Has <span style="color:blue">{{mutual_friends}}</span> Mutual Friends</div><br>
+                        <div> <span style="color:blue">{{friends_not_following}}</span> Friends Are Not Following {{UserName}}</div><br>
+                        <div> <span style="color:blue">{{followers_not_following}}</span> Followers Are Not Followed Back By {{UserName}}</div><br>
+
+                    </div>
+                </div>
+                </div>
+                  <!-- Sentiment Analysis -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Top 10 Most Used Hashtags</h6>
+                </div>
+                <div class="card-body">
+                  <!--<p class="h6 mb-0 font-weight-bold text-gray-800"> Positive  {{SentimentList.0}}</p>-->
+                      <!--<p class="h6 mb-0 font-weight-bold text-gray-800"> Negative {{SentimentList.1}}</p>-->
+                      <!--<p class="h6 mb-0 font-weight-bold text-gray-800">Neutral   {{SentimentList.2}}</p>-->
+                      <div id="Sentimentcontainer"> </div>
                 </div>
               </div>
 
+
+
+
+
+          </div><!-- row 2 column 2-->
+
+
+            </div><!-- Row 2-->
+
+
+            </div>
+           <!-- /.container-fluid -->
+
+              </div>
             </div>
           </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; SocialReach 2019</span>
           </div>
         </div>
       </footer>
@@ -633,29 +408,6 @@
   </div>
   <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -673,9 +425,10 @@
   <!-- Page level custom scripts -->
   <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
   <script src="{%static 'js/demo/chart-pie-demo.js' %}"></script>
-  <script> <!--src="https://code.highcharts.com/highcharts.src.js"-->
-  // Set new default font family and font color to mimic Bootstrap's default styling
-Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+   <!--Set new default font family and font color to mimic Bootstrap's default styling-->
+<script>
+  Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Pie Chart Example
@@ -713,7 +466,7 @@ var myPieChart = new Chart(ctx, {
 </script>
   <script>
 
-Highcharts.chart('pie', {
+Highcharts.chart('Sentimentcontainer', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -721,14 +474,13 @@ Highcharts.chart('pie', {
         type: 'pie'
     },
     title: {
-        text: 'Sentiment Analysis of Twitter'
+        text: 'Sentiment Analysis of User'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
     plotOptions: {
         pie: {
-            size : "55%",
             allowPointSelect: true,
             cursor: 'pointer',
             dataLabels: {
@@ -745,25 +497,26 @@ Highcharts.chart('pie', {
         colorByPoint: true,
         data: [{
             name: 'Positive',
-            y: 30,
+            y: {{SentimentList.0}},
 	    color:'#00ff00',
 
             selected: true
         }, {
             name: 'Negative',
 
-            y: 20,
+            y: {{SentimentList.1}},
 	    color:'#FF0000'
         }, {
             name: 'Neutral',
 
-            y: 10,
+            y: {{SentimentList.2}},
 	    color:'#ADD8E6'
         }]
     }]
 });
   </script>
 
-
 </body>
+
 </html>
+
