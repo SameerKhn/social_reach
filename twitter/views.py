@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from . import authentication
 from . import methods
 import json
 import pandas as pd
@@ -9,8 +8,6 @@ import matplotlib.dates as mdates
 from datetime import datetime
 import io
 from django.http import HttpResponse
-from tweepy import Cursor
-from collections import defaultdict
 
 # Create your views here.
 
@@ -74,7 +71,7 @@ def PostIndex(request):
     retweet_count, avg_retweet, retweet_per_user = methods.InfluenceAndEngagement(user_profile,FollowerList,UserTimeLine)
 
     #Getting sentiment analysis
-    list = methods.performAnalysis(UserTimeLine)
+    list,positiveTweets,neutralTweets,negativeTweets = methods.performAnalysis(UserTimeLine)
 
     context={'Sname':Sname,'UserName':UserName,'UserNoOfTweets':UserNoOfTweets,'UserFavoritesCount':UserFavoritesCount,'UserLocation':UserLocation,'UserDescription':UserDescription,'UserCreatedAt':UserCreatedAt,
             'tweetsNoOfHashtags':tweetsNoOfHashtags,'tweetsNo_Of_Hashtags_with_percent':tweetsNo_Of_Hashtags_with_percent,
@@ -82,28 +79,24 @@ def PostIndex(request):
             'UserMentionList': UserMentionList,'TermFrequencyList':TermFrequencyList,'followersCount':followersCount, 'sum_reach':sum_reach,'avg_followers':avg_followers,
             'favorite_count':favorite_count ,'avg_favorite':avg_favorite ,'favorite_per_user':favorite_per_user , 'retweet_count':retweet_count,
             'avg_retweet':avg_retweet,'retweet_per_user':retweet_per_user,'mutual_friends':mutual_friends, 'followers_not_following':followers_not_following, 'friends_not_following':friends_not_following,
-            'FreindNames':FreindNames , 'FollowerNames':FollowerNames,'TweetList':TweetList,'SentimentList':list }
-    return render(request, 'twitter/New.html', context)
+            'FreindNames':FreindNames , 'FollowerNames':FollowerNames,'TweetList':TweetList,'SentimentList':list,'positiveTweets':positiveTweets,'negativeTweets':negativeTweets,'neutralTweets':neutralTweets }
+    return render(request, 'twitter/PostIndex.html', context)
 
 
 #(GET) View For Creating Time Series
 def TimeSeries(request):
-    client = authentication.get_twitter_client()
-    List = []
     all_dates = []
-    userName = request.GET.get('userName') #request.GET['userName']
-    #getting the user timeline
-    for page in Cursor(client.user_timeline, screen_name=userName, count=200).pages(20):
-        for status in page:
-            List.append(json.dumps(status._json) + "\n")
+    userName = request.GET.get('userName')
+
+    #Getting the user timeline
+    List=methods.GetUserTimeline(userName)
 
     for line in List:
         tweet = json.loads(line)
         all_dates.append(tweet.get('created_at'))
 
-    # get users profile
-    profile = client.get_user(screen_name=userName)
-    user_profile = (json.dumps(profile._json, indent=4))
+    #Getting UserProfile
+    user_profile = methods.GetUserProfile(userName)
     userProfile = json.loads(user_profile)
 
     idx = pd.DatetimeIndex(all_dates)
@@ -124,15 +117,12 @@ def TimeSeries(request):
     datemin = datetime.strptime(datemin, '%a %b %d %H:%M:%S %z %Y')
     datemax = str(datetime.today())
     datemax = datetime.strptime(datemax, '%Y-%m-%d %H:%M:%S.%f')
-    # datemin = datetime(2018,1,1,1,1)
-    # datemax = datetime(2019, 1, 1, 1, 1)
     ax.xaxis.set_major_locator(hours)
     ax.xaxis.set_major_formatter(date_formatter)
     ax.set_xlim(datemin, datemax)
     max_freq = per_minute.max()
     ax.set_ylim(0, max_freq)
     ax.plot(per_minute.index, per_minute)
-    # plt.savefig('tweet_time_series.png')
 
     buffer = io.BytesIO()
     buffer.seek(0)

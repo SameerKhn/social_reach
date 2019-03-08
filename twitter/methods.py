@@ -118,9 +118,9 @@ def GetTermFrequency(statusList=[]):
         ObjectList.append(object)
     return ObjectList
 
-#For pagination of items
+#For pagination of items(Generate n-sized schunks from items)
 def paginate(items, n):
-    """Generate n-sized schunks from items"""
+
     for i in range(0, len(items), n):
         yield items[i:i+n]
 
@@ -170,7 +170,7 @@ def GetUserProfile(screen_name):
 def GetUserTimeline(screen_name):
     client = authentication.get_twitter_client()
     statusList = []
-    for page in Cursor(client.user_timeline, screen_name=screen_name, count=200).pages(25):
+    for page in Cursor(client.user_timeline, screen_name=screen_name, count=200).pages(30):
         for status in page:
             statusList.append(json.dumps(status._json) + "\n")
 
@@ -195,27 +195,28 @@ def FriendAndFollowerNames(FollowerList=[] ,FriendList=[]):
 
 #Sentiment Analysis Function
 def performAnalysis(statusList=[]):
-    positive = 0
-    negative = 0
-    neutral = 0
+    positive,negative,neutral = 0,0,0
     list = []
-
+    PostiveTweets,NeutralTweets,NegativeTweets=[],[],[]
     for tweet in statusList:
          Tweet=json.loads(tweet)
          analysis = TextBlob(Tweet.get('text'))
          if analysis.sentiment.polarity > 0:
             positive = positive+1
+            PostiveTweets.append(Tweet.get('text'))
 
          if analysis.sentiment.polarity < 0:
             negative = negative +1
+            NegativeTweets.append(Tweet.get('text'))
 
          if analysis.sentiment.polarity == 0:
              neutral = neutral + 1
+             NeutralTweets.append(Tweet.get('text'))
 
     list.append(positive)
     list.append(negative)
     list.append(neutral)
-    return list
+    return list,PostiveTweets,NeutralTweets,NegativeTweets
 
 #Get Analysis of Influence And Engagement
 def InfluenceAndEngagement(UserProfile,FollowerList=[],statusList=[]):

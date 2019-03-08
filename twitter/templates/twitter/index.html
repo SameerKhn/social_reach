@@ -125,7 +125,7 @@
 
           <div class="row">
 
-            <!-- Area Chart -->
+            <!-- What is SocailReach Card -->
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -138,15 +138,13 @@
                    <p >  The purpose of SocialReach is to submit the project as a Final year project.
                      The main purpose of this project is that it gives us the power to get complete
                      insights of a user's activity on his twitter's timeline within seconds which anyone
-                     is not able to examine just by watching their profiles. that a user can enter a valid
-                     Username of any valid twitter's user  and can find real time information about that
-                     user from twitter. </p>
+                     is not able to examine just by watching their profiles.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Pie Chart -->
+            <!-- How to use it Card-->
             <div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -172,7 +170,7 @@
             <!-- Content Column -->
             <div class="col-lg-6 mb-4">
 
-              <!-- Project Card Example -->
+              <!-- Objectives Card -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Objectives/Deliverables Of SocialReach</h6>
@@ -199,7 +197,7 @@
 
             <div class="col-lg-6 mb-4">
 
-              <!-- Illustrations -->
+              <!-- Image Card -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
@@ -248,100 +246,6 @@
   <!-- Page level plugins -->
   <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
-  <script src="{%static 'js/demo/chart-pie-demo.js' %}"></script>
-  <script src="https://code.highcharts.com/highcharts.src.js"></script>
-   <!--Set new default font family and font color to mimic Bootstrap's default styling-->
-<script>
-  Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-Chart.defaults.global.defaultFontColor = '#858796';
-
-// Pie Chart Example
-var ctx = document.getElementById("myPieChart");
-var myPieChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ["Positive", "Negative", "Neutral"],
-    datasets: [{
-      data: [10, 10, 10],
-      backgroundColor: ['#00ff00', '#ff0000', '0000ff'],
-     hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
-      hoverBorderColor: "rgba(234, 236, 244, 1)",
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    tooltips: {
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      caretPadding: 10,
-    },
-    legend: {
-      display: false
-    },
-    cutoutPercentage: 80,
-  },
-});
-
-</script>
-  <script>
-
-
-Highcharts.chart('Sentimentcontainer', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Sentiment Analysis of Twitter'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-            }
-        }
-    },
-    series: [{
-        name: 'Sentiments',
-        colorByPoint: true,
-        data: [{
-            name: 'Positive',
-            y: {{data.0}},
-	    color:'#00ff00',
-
-            selected: true
-        }, {
-            name: 'Negative',
-
-            y: {{data.1}},
-	    color:'#FF0000'
-        }, {
-            name: 'Neutral',
-
-            y: {{data.2}},
-	    color:'#ADD8E6'
-        }]
-    }]
-});
-  </script>
 
 </body>
 

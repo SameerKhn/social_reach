@@ -112,7 +112,7 @@
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Total Number Of Tweets -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -132,16 +132,19 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Users Location Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{{UserName}}'s Location</div>
+                      {% if UserDescription %}
                       <div class="h5 mb-0 font-weight-bold text-gray-800"> {{UserLocation}} </div>
-
-                    </div>
+                      {% else %}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> Location Not Granted </div>
+                      {% endif %}
+                      </div>
                     <div class="col-auto">
                       <!--<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>-->
                     </div>
@@ -150,7 +153,7 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Users Account Creation Date Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
@@ -173,14 +176,20 @@
               </div>
             </div>
 
-            <!-- Pending Requests Card Example -->
+            <!-- Users description Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
+
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{{UserName}}'s Description </div>
+                      {% if UserDescription %}
                       <div class="h5 mb-0 font-weight-bold text-gray-800"> {{UserDescription}} </div>
+                      {% else %}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> Description Not Granted </div>
+                      {% endif %}
+
                     </div>
 
                   </div>
@@ -208,9 +217,6 @@
                   </div>  <!--{% url 'TimeSeries' %}-->
                 </div>
               </div>
-
-
-
             </div>
 
             <!-- Top 10 Mentioned Users -->
@@ -281,9 +287,7 @@
                 </div>
                 <div class="card-body">
                   <div class="h6 mb-0 font-weight-bold text-gray-800">
-                    <!--<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{% static 'img/undraw_posting_photo.svg' %}" alt="">-->
-                    <!--<div>{{followersCount}} Followers   </div>-->
-                    <!--<br>-->
+
                     <div><span style="color:blue">{{sum_reach}} </span>Users Reached By 1-Degree Connection   </div>
                     <br>
                     <div>Average Number Of Followers For {{UserName}}'s Followers: <span style="color:blue">{{avg_followers}}</span>    </div>
@@ -364,13 +368,80 @@
                   <!-- Sentiment Analysis -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Top 10 Most Used Hashtags</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Sentiment Analysis Of User's Tweets</h6>
                 </div>
                 <div class="card-body">
-                  <!--<p class="h6 mb-0 font-weight-bold text-gray-800"> Positive  {{SentimentList.0}}</p>-->
-                      <!--<p class="h6 mb-0 font-weight-bold text-gray-800"> Negative {{SentimentList.1}}</p>-->
-                      <!--<p class="h6 mb-0 font-weight-bold text-gray-800">Neutral   {{SentimentList.2}}</p>-->
-                      <div id="Sentimentcontainer"> </div>
+                  <div id="Sentimentcontainer"> </div>
+                  <div> <!--Buttons for showing tweets(modal) on button click -->
+                    <center>
+                    <button type="button" class="btn positive-header " data-toggle="modal" data-target="#PositiveModal">Positive</button>
+                    <button type="button" class="btn neutral-header " data-toggle="modal" data-target="#NuetralModal">Neutral</button>
+                    <button type="button" class="btn negative-header " data-toggle="modal" data-target="#NegativeModal">Negative</button>
+                    </center>
+                  </div>
+
+                  <!--Modal for Positive Tweets -->
+                  <div class="modal fade" id="PositiveModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header positive-header ">
+                          <h2>Positive Tweets <span>({{positiveTweets|length}}) </span></h2>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                          {% for item in positiveTweets %}
+                           <li>  <div class="h6 mb-0 font-weight-bold text-gray-800"><p>{{item}}</p><br></div> </li>
+                          {%endfor%}
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Modal for Neutral Tweets -->
+                  <div class="modal fade" id="NuetralModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header neutral-header ">
+                          <h2>Neutral Tweets <span>({{neutralTweets|length}}) </span></h2>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                          {% for item in neutralTweets %}
+                           <li>  <div class="h6 mb-0 font-weight-bold text-gray-800"><p>{{item}}</p><br></div> </li>
+                          {%endfor%}
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Modal for Negative Tweets -->
+                  <div class="modal fade" id="NegativeModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header negative-header ">
+                          <h2>Negative Tweets <span>({{negativeTweets|length}}) </span></h2>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                          {% for item in negativeTweets %}
+                           <li>  <div class="h6 mb-0 font-weight-bold text-gray-800"><p>{{item}}</p><br></div> </li>
+                          {%endfor%}
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -474,7 +545,7 @@ Highcharts.chart('Sentimentcontainer', {
         type: 'pie'
     },
     title: {
-        text: 'Sentiment Analysis of User'
+        text: ' '
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
